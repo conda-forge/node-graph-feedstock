@@ -1,5 +1,5 @@
 {% set name = "node-graph" %}
-{% set version = "0.2.5" %}
+{% set version = "0.2.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/node_graph-{{ version }}.tar.gz
-  sha256: 358d3ae1320fecef31ed3e6dae3d33ba65aadf89ea44f8ecd9eeec4fb577ca9f
+  sha256: e629ebd082eeadbe2550afad674ae41bf6121b422163c831ce06491b1365036a
 
 build:
   noarch: python
