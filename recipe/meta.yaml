@@ -1,5 +1,5 @@
 {% set name = "node-graph" %}
-{% set version = "0.3.0" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/node_graph-{{ version }}.tar.gz
-  sha256: e201101100574af86c2b149c5fd9236e8b8ef4d5ecb0ba7b62ddadf217af5466
+  sha256: 6ac2e995f82ea0b092ea90380d458beab771be10f56bf5a96bdd1f668a3cde58
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -20,6 +20,7 @@ requirements:
     - flit-core >=3.2
     - pip
   run:
+    - wrapt
     - node-graph-widget
     - python >={{ python_min }}
     - numpy
