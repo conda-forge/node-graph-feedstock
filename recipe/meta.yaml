@@ -1,5 +1,5 @@
 {% set name = "node-graph" %}
-{% set version = "0.5.1" %}
+{% set version = "0.5.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/node_graph-{{ version }}.tar.gz
-  sha256: 36c8791e304d40d3cb22af50f29f2ff4e09f933ddab63b19c63191ca630a59bb
+  sha256: d42c266c85e4ae4bb349bbfdee6e2a50aa83adf109e9fe3878813615de1028ab
 
 build:
   noarch: python
@@ -20,13 +20,15 @@ requirements:
     - flit-core >=3.2
     - pip
   run:
+    - python-graphviz >=0.20
+    - rdflib >=6.0
     - pydantic >=2.6,<3.dev0
     - wrapt
     - node-graph-widget
     - python >={{ python_min }}
     - numpy
     - scipy
-    - click
+    - click >=8.1
     - pyyaml
     - colorama
     - termcolor
